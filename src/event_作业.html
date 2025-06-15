@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <style>
+    input{
+       
+        margin: 100px auto;
+    }
+</style>
+<body>
+    <input type="text" class="input">
+
+<script>
+
+var input = document.querySelector('.input');
+var s = ''
+input.addEventListener('input', function(e) {
+console.log(e);
+   if(e.data !==null){
+    s+= e.data.toUpperCase();
+ input.value=s
+
+   }
+    
+}) -->
+<!-- </script> -->
+
+<div>
+    <ul class="ul">
+        <li>我是新添加的li元素</li>
+        <li>我是新添加的li元素</li>
+        <li>我是新添加的li元素</li>
+    </ul>
+
+</div>
+<button class="btns">点击添加</button>
+
+
+<script>
+    //添加li元素
+    var btns = document.querySelector('.btns');
+    var ul = document.querySelector('.ul');
+    btns.addEventListener('click',function(){
+        var li = document.createElement('li');
+        ul.appendChild(li);
+        // console.log(li);
+        li.innerHTML='我是新添加的li元素'
+
+        
+    })
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .tabList li {
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 20px;
+        text-align: center;
+        cursor: pointer;
+        list-style: none;
+        text-align: center;
+        /* display: inline-block; */
+
+
+    }
+
+    .tabList .current {
+        background-color: red;
+        color: aliceblue;
+
+    }
+
+
+    .imgs img {
+        width: 500px;
+        height: 350px;
+
+    }
+
+    .item {
+        display: none;
+    }
+</style>
+
+<body>
+    <div >
+        <div class="tabList" style="display:inline-block;">
+            <ul class="text">
+                <li class="current">所</li>
+                <li >见</li>
+                <li >即</li>
+                <li >所</li>
+                <li >得</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="imgs">
+
+
+            <div class="item">
+
+                <img src="img/6.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <img src="img/7.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <img src="img/8.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <img src="img/9.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <img src="img/10.jpg" alt="">
+
+            </div>
+
+        </div>
+
+        <script>
+
+            var tabList = document.querySelector('.tabList');
+            var list = tabList.querySelectorAll('li');
+            var items = document.querySelectorAll('.item');
+
+            
+            for (var i = 0; i < list.length; i++) {
+                list[i].setAttribute('index', i);
+                list[i].onclick = function () {
+                    for (var i = 0; i < list.length; i++) {
+                        console.log(list[i])
+                        list[i].className = '';
+                    }
+                    this.className = 'current';
+
+                    var index = this.getAttribute('index');
+                   
+                    for (var i = 0; i < items.length; i++) {
+                        items[i].style.display = 'none';
+                    }
+                     items[index].style.display = 'block';
+                    
+
+
+
+                }
+
+
+
+
+
+
+            }
+
+
+
+        </script>
+
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>

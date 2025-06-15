@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        li a{
+            float: right;
+
+        }
+    </style>
+     <textarea name="" id="">123</textarea> 
+     <button>发布</button>
+         <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+         </ul>
+
+         <script>
+            var btn=document.querySelector('button');
+            var text=document.querySelector('textarea');
+            var ul=document.querySelector('ul');
+            // node.cloneNode()
+          var lili=  ul.children[0].cloneNode(true);//clone 后，要有位置添加。
+          ul.appendChild(lili)//clone li 没有text,cloneNode()为空或者为false为浅拷贝.如果（）为true为深拷贝,会将li 标签内的文字同事clone
+
+
+
+            //注册事件
+            btn.onclick=function(){
+                if(text.value==''){
+                    alert('no content!')
+                }else{
+                    // console.log(text.value);
+                    
+                     var li=document.createElement('li');
+                     //现有li 才能赋值
+                    li.innerHTML=text.value+"<a href:'javascript:;'>删除</a>";
+                // ul.appendChild(li)//放在前面插入内容
+                ul.insertBefore(li,ul.children[0]);
+                //删除元素，父元素
+                var as=document.querySelectorAll('a')
+                for(var i=0;i<as.length;i++){
+                    as[i].onclick=function(){
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+
+
+                }
+               
+
+            } 
+
+            //复制节点node.cloneNode,if () is empty or false  that is soft copy, if it's true,that's hard copy
+
+
+
+
+             </script>
+
+
+    
+</body>
+</html>

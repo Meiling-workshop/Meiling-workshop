@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .search{
+            position: relative;
+            width: 178px;
+            margin: 100px;
+        }
+
+
+        .con{
+            display: none;
+            position: obsolute;
+            top: -40px;
+            width: 171px;
+            border: 1px solid rgba(0, 0, 0, .2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+            padding: 5px 0;
+            font-size: 18px;
+            line-height: 20px;
+            color: #333;
+        }
+        .con::before{
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 28px;
+            left: 18px;
+            border: 8px solid #000;
+            border-style: solid dashed dashed;
+            border-color: #fff transparent transparent;
+        }
+    </style>
+
+
+
+
+
+<div class="search">
+    <div class="con">
+        123
+    </div>
+    <input type="text" placeholder="input you num of delivery" class="jd">
+    <div>
+
+    </div>
+</div>
+
+
+
+
+    <script>
+//传统注册时间on开头，监听注册事件addEventListener() IE9以前不支持 ，可以用attachEvent()代替，
+//addEventListener(type,listener[,useCapture])监听事件,可以给同一个事件添加多个处理程序
+//type事件类型字符串，不要带on
+//listener 事件处理函数，事件发生时，会调用该监听函数
+//useCapture 默认false
+// var btns=document.querySelector('button');
+// btns.addEventListener('click',function(){
+//     alert('123')
+// })
+//attachEvent(eventNameWithOn,callback)事件监听方式，ie9以前的版本支持
+//eventNameWithOn:事件类型字符串，比如onclick\onmouseover 这里要带on
+//callback事件处理函数，当目标触发事件时回调函数被调用
+
+
+//删除事件（解绑事件）；
+//传统方式eventTarget.onclick=none
+
+// var divs=document.querySelectorAll('div');
+// divs[0].onclick=function(){
+//     alert('1');
+//         divs[0].onclick = null;    
+// }
+
+
+//移除监听事件
+
+// divs[1].addEventListener('click',fn)//函数名写上
+//     alert('22');
+
+//  divs[1].removeEventListener('click',fn)//fn不需要调用+（）
+//     function fn(){
+//         alert('22');
+//         dis[1].removeEventListener('click',fn)
+//     }
+
+    //事件对象
+
+    // var div=document.querySelector('div');
+    // div.onclick = function(event){
+    //     console.log(event);  
+    // }//event是一个事件对象，形参，是系统自动创建的，不需要实际传参
+    // //事件对象是我们事件一些列相关数据的集合 鼠标事件、键盘事件
+    // div.addEventListener('click',function(event){
+    //     console.log(event);  
+    // })
+    // //事件对象 可以自己命名 event\evt\e  ie678 通过window.event
+
+
+//e.target与this 的区别
+
+// var div= document.querySelector('div');
+// div.addEventListener('click',function(e){
+//     console.log(e.target);//返回触发事件的对象
+//     console.log(this);//返回绑定事件的对象；  
+// })
+// var ul=document.querySelector('ul');
+// ul.addEventListener('click',function(e){
+// console.log(this);
+// console.log(e.target);
+// console.log(e.currentTarget);//和this非常相似 currentTarget ie678不兼容
+// })
+
+
+//阻止默认行为（让链接不跳转、提交按钮不提交）
+
+// var div = document.querySelector('div');
+// div.addEventListener('mouseover',fn);
+// div.addEventListener('mouseout', fn);
+
+// div.addEventListener('click',fn);
+// function fn(e){
+//     console.log(e.type);   
+// }
+// var a = document.querySelector('a');
+// a.addEventListener('click', function(e){
+//     e.preventDefault();//dom的标准写法
+// })
+// //传统方式
+// a.onclick = function(e){
+//     e.preventDefault();//低版本浏览器 ie678
+//     e.returnValue;   
+// }
+
+//阻止冒泡 stopProgation()
+//事件委托原理：不要给每一个子节点设置事件监听，而是监听设置在其父节点上，然后利用冒泡原理设置每个子节点
+// var ul=document.querySelector('ul')
+// ul.addEventListener('click',function(e){
+//     // alert('1')
+//     e.target.style.backgroundColor='pink';//e.target触发事件
+   
+// })
+
+
+//contextmenu 让程序员取消默认的上下菜单； selectstart 禁止选中文字
+
+// document.addEventListener('selectstart' ,function(e){
+//     e.preventDefault()
+// })
+// document.addEventListener('contextmenu' ,function(e){
+//     e.preventDefault()
+// })
+
+
+//鼠标事件对象moseevent 键盘事件keyboardEvent
+
+// document.addEventListener('click', function(e){
+//     console.log(e.clientX);//鼠标可视区的X坐标和Y坐标
+//      console.log(e.clientY);
+
+//      console.log('----------------------');
+     
+
+//      console.log(e.pageX);//页面文档的X坐标和Y坐标，IE9+支持
+//      console.log(e.pageY);
+//          console.log('----------------------');
+     
+
+//      console.log(e.screenX);
+//      console.log(e.screenY);
+    
+// })
+
+
+//案例 移动天使
+// document.addEventListener('mousemove', function(e){ //mousemove 只要鼠标移动1px就会触发这个事件
+//     // console.log('1');
+//     var x = e.pageX;
+//     var y=e.pageY;
+//     console.log('x坐标'+x+'y坐标是'+y);
+//     var pic=document.querySelector('img');
+//     pic.style.left=x-50 + 'px';
+//     pic.style.top=y-40 + 'px';
+    
+// })
+
+
+//键盘事件onkeyup 按键弹起来 onkeydown 
+// onkeypress (不能识别功能键 shift option)
+//三个对象的执行顺序 keydown->keypress->keyup
+//keyup 和keydown在keyCode不区分大小写；keypress可以区分大小写
+
+// document.onkeyup = function(e){
+//     console.log('keyup');
+// }
+// document.addEventListener('keyup', function(){
+//     console.log('keyup');    
+// })
+// document.addEventListener('keydown', function(){
+//     console.log('keydown');   
+// })
+// document.addEventListener('keypress', function(){
+//     console.log('keypress');  
+// })
+
+
+//键盘事件对象 可以判断用户按了哪些keys
+// document.addEventListener('keyup', function(e){
+//     console.log('up:'+e.keyCode);   
+// })
+// document.addEventListener('keypress', function(e){
+//     console.log("press:" + e.keyCode);   
+// })
+
+
+//案例模拟京东输入内容
+// var search = document.querySelector('input');
+// document.addEventListener('keyup' ,function(e){
+//     // console.log(e.keyCode);//83
+//     if(e.keyCode === 83){
+//         search.focus();//获得焦点
+//     }
+// })
+
+
+//案例模拟京东快递单号查询
+
+var con = document.querySelector('.con');
+var jd_input = document.querySelector('.jd');
+jd_input.addEventListener('keyup', function(){
+    // console.log('info');
+    
+    if(this.value==''){    //判断是否有值，有值则放大显示
+        con.style.display='none'
+    }else{
+con.style.display='block'
+    con.innerText= this.value;
+    }
+
+    //获得焦点显示盒子
+       jd_input.addEventListener('focus', function(){
+        if(this.value!== ''){
+             con.style.display='block'
+
+        }
+       
+    });
+        //失去焦点隐藏盒子
+    jd_input.addEventListener('blur', function(){
+        con.style.display='none'
+    });
+
+    
+})
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div>
+        <ol>
+
+            <li>li1</li>
+            <li>li2</li>
+            <li>li3</li>
+            <li>li4</li>
+            <li>li5</li>
+        </ol>
+        <span>span</span>
+    </div>
+
+    <script>
+        var div=document.querySelector('div');
+        console.log(div.nextSibling);//得到下一个兄弟节点 或者文本节点
+        console.log(div.previousSibling);//上一个兄弟节点
+        console.log(div.previousElementSibling);//有兼容问题 IE9以上支持 -->
+        <!-- <ul>
+
+        </ul>
+        <script>
+            //动态创建节点
+          var li=  document.createElement('li');
+          //node.apendChild()添加节点，node 是父节点，（）是子节点；后面追加元素
+          var ul=document.querySelector('ul');
+          ul.appendChild(li);
+          //node.insertBefore(child)在前面插入元素
+          var lili=document.createElement('li');
+          ul.insertBefore(lili,ul.children[0]);
+
+
+
+        </script> -->
+        <!-- //案例：留言板 点击按钮后创建一个li-->
+         <!-- <textarea name="" id="">123</textarea>
+         <button>发布</button>
+         <ul>
+            <li>123</li>
+         </ul>
+
+         <script>
+            var btn=document.querySelector('button');
+            var text=document.querySelector('textarea');
+            var ul=document.querySelector('ul');
+            //注册事件
+            btn.onclick=function(){
+                if(text.value==''){
+                    alert('no content!')
+                }else{
+                    // console.log(text.value);
+                    
+                     var li=document.createElement('li');
+                     //现有li 才能赋值
+                    li.innerHTML=text.value;
+                // ul.appendChild(li)//放在前面插入内容
+                ul.insertBefore(li,ul.children[0]);
+                }
+               
+
+            } -->
+                <button>删除</button>
+                <ul>
+                    <li>a</li>
+                    <li>b</li>
+                    <li>c</li>
+                </ul>
+
+
+
+            <!-- // 删除节点 node.removeChild-->
+             <script>
+                var ul=document.querySelector('ul');
+                var btn=document.querySelector('button')
+                ul.removeChild(ul.children[0]);
+                //点击按钮删除Child
+                btn.onclick=function(){
+                   if(ul.removeChild.length==0){
+                    this.disabled==true;
+
+                   }else{ ul.removeChild(ul.children[0])}
+                }
+
+
+
+             </script>
+
+
+
+
+
+
+
+         </script>
+
+
+
+
+
+
+
+
+        
+        
+        
+
+
+    </script>
+
+    <!-- <ul class="nav">
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li><a href="">私信</a></li>
+                <li><a href="">评论</a></li>
+                <li><a href="">@我</a></li>
+
+
+            </ul>
+        </li>
+         <li>
+            <a href="#">微博</a>
+            <ul>
+                <li><a href="">私信</a></li>
+                <li><a href="">评论</a></li>
+                <li><a href="">@我</a></li>
+
+
+            </ul>
+        </li>
+         <li>
+            <a href="#">微博</a>
+            <ul>
+                <li><a href="">私信</a></li>
+                <li><a href="">评论</a></li>
+                <li><a href="">@我</a></li>
+
+
+            </ul>
+        </li> -->
+
+
+
+
+
+
+
+    </ul>
+
+</body>
+
+<script>
+//     var ul= document.querySelector('ul');
+// console.log(ul.childNodes);
+//nodeType判断元素类型  0为文本 1为元素节点
+//parentNode.children 只返回元素节点
+// console.log(ul.children);//最常使用
+
+// //获取第一个子节点以及最后一个子节点
+// var ol=document.querySelector('ol');
+// console.log(ol.firstChild);
+// console.log(ol.lastChild);//fistChild 第一个字节点，无论是文本节点or 元素节点
+// console.log(ol.firstElementChild);//返回第一个子元素节点，有捷荣问题IE9以上支持
+// //实际开发写法，没有兼容问题
+// console.log(ol.children[0]);//第一个
+// console.log(ol.children[ol.children.length-1]);//最后一个
+
+// var nav=document.querySelector('.nav');
+// var lis=nav.children;
+// //循环注册时间
+// for(var i=0;i<lis.length;i++){
+//     lis[i].onmouseover =function(){
+//         this.children[1].style.display='block';
+//     }
+//      lis[i].onmouseout =function(){
+//         this.children[1].style.display='none';
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

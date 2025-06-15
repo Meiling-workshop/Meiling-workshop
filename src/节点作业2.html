@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul id="ul">
+            <li>aaa</li>
+            <li>bbb</li>
+            ccc
+
+        </ul>
+        children显示的节点数:
+
+
+    </div>
+    <script>
+        var ul=document.querySelector('ul');
+        
+    //     console.log(ul.childNodes.length);
+    //    console.log(ul.children.length);
+
+    console.log(ul);
+    
+       
+       for(var i=0;i<ul.children.length;i++){
+        if(ul.children[i].nodeType=='1'){
+            console.log(ul.children[i]);
+            
+        }else{console.log('0');
+        }
+       }
+       
+        
+
+
+
+
+    </script>
+
+
+</body>
+</html>

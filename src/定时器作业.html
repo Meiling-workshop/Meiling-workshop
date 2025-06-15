@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        div{
+            color: brown   ;
+        }
+        img{
+            width: 300px;
+            height: 200px;
+            align-self: auto;
+
+        }
+    </style>
+    <div class="text"> </div>
+    <img src="img/6.jpg" alt="" class="pic">
+    <script>
+        var pic = document.querySelector('.pic')
+        var time = 19;
+        var text = document.querySelector('.text')
+        pic.addEventListener('click',function(){
+            
+            setInterval(function(){
+                if( time == 0){
+                     pic.style.display = 'none'
+                    
+                     
+
+                }else{
+                    pic.style.display = 'block';
+                    text.innerHTML = time + '秒后图片消失';
+                    time --;
+                }
+               
+
+            },1000)
+
+        })
+
+
+    </script>
+
+
+</body>
+</html>
