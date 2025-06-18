@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="list.html">lick me to list page</a>
+    <button>move forward</button>
+
+
+    <script>
+        // //location对象 url对象
+        // var btn = document.querySelector('button');
+        // var div = document.querySelector('div');
+        // btn.addEventListener('click', function() {
+        //     // console.log(window.location.href);
+        //     // location.href = 'https://www.itcast.cn';
+        //       var timmer = 5;
+        // setInterval(function(){
+        //     if ( timmer == 0){
+        //         location.href = 'https://www.itcast.cn';
+        //     }else{
+        //     div.innerHTML = 'you will jump to homepage in '+ timmer+'s ';
+        //     timmer --;
+        //     }     
+        // },1000)         
+        // })
+
+      //获取URL参数
+    //   var params = location.search.substr(1);
+    //   var paramsArray = params.split('=');
+    //   console.log(paramsArray);
+    //   var div = document.querySelector('div');
+    //   div.innerHTML = paramsArray[1] + '，欢迎您！';
+
+
+      //location 对象
+      //location.assign('https://www.itcast.cn');跟href一样可以跳转页面（重定向页面）
+        //location.replace('https://www.itcast.cn');跟assign一样可以跳转页面，但是不能返回上一页
+        //location.reload(); //刷新页面
+        // var btn = document.querySelector('button');
+        // btn.addEventListener('click', function() {
+        //     //location.href = 'https://www.itcast.cn';
+        //     //location.assign('https://www.itcast.cn');
+        //     //location.replace('https://www.itcast.cn');
+        //     // location.replace('https://www.itcast.cn');
+        //     location.reload(); //刷新页面
+        // })
+
+        //navigator对象
+        //history对象,与浏览器的历史记录进行交互
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            //history.back(); //返回上一页
+            // history.forward(); //前进一页
+            history.go(1); //返回上一页
+            // history.go(1); //前进一页
+            // history.go(0); //刷新页面
+        })
+
+    
+
+
+
+    </script>
+</body>
+</html>
