@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    .sliderbar {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    /* .sliderbar span {
+        background-color: #444;
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    } */
+
+    .con {
+        position: relative;
+        right: 0; /* 初始 right，为动画准备 */
+        width: 200px;
+        height: 40px;
+        background-color: purple;
+        color: white;
+        line-height: 40px;
+        text-align: center;
+        font-size: 14px;
+        z-index: -1;
+    }
+
+
+    </style>
+    <script src="animate.js"></script>
+</head>
+<body>
+    <div class="sliderbar">
+        <span>←</span>
+        <div class="con"> FeedBack</div>
+    </div>
+    <script>
+        var sliderbar = document.querySelector('.sliderbar')
+        var con = document.querySelector('.con')
+        sliderbar.addEventListener('mouseenter',function(){
+            animation(con,-200,function(){
+                //动画执行完毕箭头调转
+                sliderbar.children[0].innerHTML ='→'
+            })
+        })
+         sliderbar.addEventListener('mouseleave',function(){
+            animation(con,0,function(){
+                sliderbar.children[0].innerHTML ='←'
+
+            })
+        })
+
+    </script>
+</body>
+</html>
