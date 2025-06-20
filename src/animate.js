@@ -1,5 +1,7 @@
+
+
 function animation(obj, target,callBack) {
-            console.log(callBack);
+            // console.log(callBack);
             
 
 
@@ -20,6 +22,6 @@ function animation(obj, target,callBack) {
                 }
                 obj.style.left = obj.offsetLeft + step + 'px';//缓动是把每次位移变小
 
-            }, 30)
+            }, 50)
 
         }

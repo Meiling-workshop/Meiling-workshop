@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .font{
+            position: absolute;
+            font: red;
+            background-color: yellow;
+            width: 20px;
+            height: 80px;
+            vertical-align: center;
+            right: -20px; 
+            top: 50%;
+            writing-mode: vertical-rl;
+            transform: translateY(-50%);
+        }
+       .box{
+            position: relative;
+            background-color: skyblue;
+            width: 200px;
+            height: 300px;
+            left: 0;
+            
+        }
+        
+
+    </style>
+     <script src="animate.js"></script>
+</head>
+<body>
+    
+  
+    <div class="box">
+        <div class="font">
+        分享到
+        </div>
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        var font = document.querySelector('.font');
+        box.addEventListener('mouseenter', function(){
+            animation(box,-280)
+        })
+         box.addEventListener('mouseleave', function(){
+            animation(box,-80)
+        })
+
+
+
+    </script>
+    
+  
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img-wrapper {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            /* height: auto; */
+            left: auto;
+            top: auto;
+            display: flex;
+            flex-direction: column;
+            /* 垂直排列 */
+            align-items: flex-end;
+            /*右对齐 */
+            width: fit-content;
+        }
+
+        .img-wrapper img {
+            display: block;
+            bottom: 0;
+            right: 0;
+            width: 400px;
+            height: auto;
+        }
+    </style>
+    <!-- <script src="animate.js"></script> -->
+</head>
+
+<body>
+    <div class="img-wrapper">
+        <img class="upper" src="img/t.jpg" alt="">
+        <img class="down" src="img/b.jpg" alt="">
+    </div>
+
+    <script>
+        var imgdown = document.querySelector('.upper');
+        var imgupper = document.querySelector('.down');
+        var imgWrapper = document.querySelector('.img-wrapper')
+        // imgWrapper.addEventListener('click', function () {
+        //     animation(imgWrapper, -500)
+        // })
+
+        function animateToBottomRight(obj, targetLeft, targetTop, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                let currentLeft = obj.offsetLeft;
+                let currentTop = obj.offsetTop;
+
+                let stepX = (targetLeft - currentLeft) / 10;
+                stepX = stepX > 0 ? Math.ceil(stepX) : Math.floor(stepX);
+
+                let stepY = (targetTop - currentTop) / 10;
+                stepY = stepY > 0 ? Math.ceil(stepY) : Math.floor(stepY);
+
+                if (currentLeft === targetLeft && currentTop === targetTop) {
+                    clearInterval(obj.timer);
+                    if (callback) callback();
+                } else {
+                    obj.style.left = currentLeft + stepX + 'px';
+                    obj.style.top = currentTop + stepY + 'px';
+                }
+            }, 500);
+        }
+
+        // var box = document.querySelector('.img-wrapper');
+
+// 假设你想让它滑到屏幕外（右+下）
+var targetLeft = window.innerWidth + 300; // 离开右侧
+var targetTop = window.innerHeight + 200; // 离开底部
+
+animateToBottomRight(imgWrapper , targetLeft, targetTop, function () {
+    box.style.display = 'none'; // 动画完成后隐藏
+});
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+
+
+
+</html>
