@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="localNavigationHistory对象.html">click me to original page</a>
+    <button> move back</button>
+    
+
+    <script>
+        //history对象
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            // history.back(); //返回上一页
+            // history.forward(); //前进一页
+            history.go(-1); //返回上一页
+            // history.go(1); //前进一页
+        })
+    </script>
+</body>
+</html>

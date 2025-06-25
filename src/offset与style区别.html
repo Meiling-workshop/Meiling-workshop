@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+</style>
+
+
+</head>
+<body>
+    <div class="box" style="width: 200px;"></div>
+    <script>
+ var box = document.querySelector('.box')
+ console.log(box.offsetWidth);//各种都能得到,只读属性
+ console.log(box.style.width);//只能得到内嵌样式，可编辑样式
+ 
+ 
+ 
+
+
+
+    </script>
+       
+   
+    
+</body>
+</html>

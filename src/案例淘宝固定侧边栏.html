@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slide-bar{
+            width: 30px;
+            height: 80px;
+            background-color: pink;
+            float: right ;
+            top: 300px;
+           
+        }
+        .Header {
+            width: 1400px;
+            height: 200px;
+            background-color: blue;
+            border: 10px solid white;
+
+        }
+        .banner{
+            width: 1400px;
+            height: 200px;
+            background-color: aqua;
+            border: 10px solid white;
+        }
+        .main{
+            width: 1400px;
+            height: 2000px;
+            background-color: yellowgreen;
+            border: 10px solid white;
+
+        }
+        .w{
+            width: 1200px;
+            margin: 10px auto;
+        }
+
+span{
+    display: none;
+    color: black;
+    position: absolute;
+
+
+}
+    
+</style>
+</head>
+
+<body>
+    <div class = 'slide-bar'>
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="Header"> head area</div>
+    <div class="banner">Banner area</div>
+    <div class="main">Main Body</div>
+    
+
+
+    <script>
+        var slideBar = document.querySelector('.slide-bar');
+        var banner = document.querySelector('.banner')
+        console.log(banner.offsetTop);
+        var bannerTop = banner.offsetTop //写在混动的外面
+        var slideBarTop = slideBar.offsetTop - bannerTop
+        var main = document.querySelector('.main');
+        var goBack = document.querySelector('.goBack')
+        var mainTop = main.offsetTop 
+        
+        document.addEventListener('scroll', function(){
+            // console.log(window.pageYOffset);//页面被卷去的头部
+            if(window.pageYOffset >= bannerTop){
+                slideBar.style.position = 'fixed'
+                slideBar.style.right = '0'
+                slideBar.style.top = slideBarTop;
+
+            }else{
+                slideBar.style.position = 'absolute'
+                slideBar.style.top = 300 +'px';
+            }
+
+            //当页面滚动到main 显示goback
+               if(window.pageYOffset >= mainTop){
+                goBack.style.display = 'block'
+               
+
+            }else{
+                goBack.style.display = 'none'
+            }
+            
+            
+        })
+
+        //element.offsetWidth 包括边框 padding 内容区，，返回数值不带单位
+        //element.clientWidth 返回自身包括padding\内容的宽度，不含边框，返回数值不带单位
+        //element.scrollWidth 返回自身实际的宽度  不含边框 返回数值不带单位。
+
+
+        //offset系列经常用于获得元素位置 offsetLeft offsetTop
+        //client 经常用于获得元素大小 clientWidth clientHeight
+        //scroll 经常用于获得滚动距离 scrollTop crollLeft
+        //注意页面滚动的距离通过window.pageXoffset获得的
+
+var a=1;
+
+    </script>
+</body>
+</html>

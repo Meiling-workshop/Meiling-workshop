@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        border: 10px solid red;
+    }
+</style>
+
+<body>
+    <div></div>
+    <script>
+        //client 返回自身包括padding 内容区的宽度 不含边框 返回数值不带单位
+        var div = document.querySelector('div')
+        console.log(div.clientTop);
+
+        //立即执行函数1.(function(){})()   or    2.(function(){}())  不需要调用函数，立马能够自己执行函数
+        (function(a,b){//可以传递参数
+
+            console.log(a+b);
+            
+        
+        })(1,2);//调用函数的意思
+        (function(a,b){
+            console.log(a+b);
+            
+
+        }(2,3))
+
+        //3.立即执行函数，做大的作用就是独立的创建了一个作用域避免命名冲突的情况
+
+        (function flexible(window, document){
+            var docEl = document.documentElement
+            var dpr = window.devicePixelRatio ||1
+
+            function setBodyFontSize(){
+                if(document.body){
+                    document.body.style.fontSize = (12*dpr) + 'px'
+                }else{
+                    document.addEventListener('DOMcontentLoad',
+                    setBodyFontSize)
+                }
+            }
+            function setRemUnit(){
+                var rem = docEl.clientWidth /10
+                docEl.style.fontSize = rem +'px'
+            }
+            setRemUnit()
+
+            window.addEventListener('resize', setRemUnit)
+            window.addEventListener('pageshow' , function(e){
+                if(e.persisted){//返回true是从缓存取到的页面，也会重新计算大小
+                    setRemUnit()
+                }
+            })
+
+
+        })
+        if(dpr >= 2){
+            var fakeBody = document.createElement('body');
+        }
+
+
+
+
+
+
+
+        
+
+
+    </script>
+</body>
+</html>
