@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table{
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td,
+        th{
+            border: 1px solid #333;
+        }
+        thead tr{
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+
+
+
+
+
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+
+
+        </tbody>
+    </table>
+    <script>
+        var datas=[
+            {
+            name:'Andy',
+            subject:'JavaScript',
+            score:100
+        }, 
+        {
+            name:'Sara',
+            subject:'JavaScript',
+            score:98
+        },
+         {
+            name:'Merlin',
+            subject:'JavaScript',
+            score:80
+        },
+         {
+            name:'Jack',
+            subject:'JavaScript',
+            score:89
+        },
+        {
+            name:'Jim',
+            subject:'JavaScript',
+            score:89
+        },
+    ];
+    //通过数据的长度 得到创建行数
+    var tbody=document.querySelector('tbody');
+    
+    for(var i=0;i<datas.length;i++){
+        var tr=document.createElement('tr')
+        tbody.appendChild(tr);
+        //行里面创建单元格(跟数据又关系的3个单元格），单元格的数量取决于对象内的属性，for循环遍历对象
+        for(var k in datas[i]){
+            var td=document.createElement('td');
+            tr.appendChild(td);
+            //把属性值给单元格
+            // console.log(datas[i][k]);
+            td.innerHTML=datas[i][k];
+            tr.appendChild(td)
+            
+
+        }
+        //创建有删除的单元格
+        var td=document.createElement('td');
+        tr.appendChild(td);
+        td.innerHTML='<a href="javascript:;">delete</a>'//结果变成链接
+
+
+    }
+    //删除操作
+    var as =document.querySelectorAll('a');
+    for(var i=0;i<as.length;i++){
+        as[i].onclick=function(){
+            //点击a删除a所在行
+            tbody.removeChild(this.parentNode.parentNode);
+        }
+    }
+//节点操作，3中创建元素
+//1.document.write('<div></div>'),文档流执行完毕，全部重绘，原先内容消失
+//2.innerHTML innerHTML='<a href:'#'>baidu</a>' 当大量创建时，拼接字符串效率比createElement效率慢
+//3.document.createElement
+
+    </script>
+</body>
+</html>

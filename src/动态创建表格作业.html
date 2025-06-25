@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+table{
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td,
+        th{
+            border: 1px solid #333;
+        }
+        thead tr{
+            height: 40px;
+            background-color: #ccc;
+        }
+
+</style>
+<body>
+
+
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>星期一</th>
+                    <th>星期二</th>
+                    <th>星期三</th>
+                    <th>星期四</th>                  
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+
+        </table>
+    </div>
+    <script>
+        var datas=[
+    {
+        Monday:'Polictics',
+        Tuesday:'Math',
+        Wednesday:'Chinese',
+        Thursday:'Chemistry',
+    },
+     {
+        Monday:'Geogaphy',
+        Tuesday:'P.E.',
+        Wednesday:'Math',
+        Thursday:'Chinese',
+    },
+     {
+        Monday:'English',
+        Tuesday:'Polictics',
+        Wednesday:'Selfstudy',
+        Thursday:'Chemistry',
+    },
+     {
+        Monday:'Polictics',
+        Tuesday:'Math',
+        Wednesday:'Chinese',
+        Thursday:'Chemistry',
+    }, {
+        Monday:'Polictics',
+        Tuesday:'Math',
+        Wednesday:'Chinese',
+        Thursday:'Chemistry',
+    }
+    ];
+    var tbody=document.querySelector('tbody');
+    for(var i=0;i<datas.length;i++){
+        var tr=document.createElement('tr');
+        tbody.appendChild(tr);
+        for(var k in datas[i]){
+            var td=document.createElement('td')
+            tr.appendChild(td);
+            td.innerHTML=datas[i][k];
+
+        }
+    }
+
+
+    </script>
+    
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

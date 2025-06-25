@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: pink;
+        }
+    </style>
+    <div></div>
+    <script>
+        
+        // window.onload = function(){  //窗口加载事件，页面全部加载完成再触发事件
+        //     var btn = document.querySelector('button');
+        //       btn.addEventListener('click', function(){
+        //     alert('click me')
+        // })
+        // }
+      //有了window.onload就可以把JS代码写在页面元素的上方，因为onload是等全部加载完毕，再去执行处理函数。
+      //window.onload传统注册时间只能写一次，如果有多个，会议最后一window.onload为准
+    //   window.onload = function(){
+    //     // alert('12')
+    //   }
+      //流行写法
+
+    //   window.addEventListener('load', function(){
+    //        var btn = document.querySelector('button');
+    //           btn.addEventListener('click', function(){
+    //         // alert('click me')
+    //     })//全部加载完才执行，包含页面DOM元素、图片\CSS
+
+    //   })
+
+      //DOMContentLoaded 事件触发时，仅当DOM加载完成，不包括样式，图片，Flash等，所以加载速度更快
+    //   document.addEventListener('DOMContentLoaded',  function(){
+    //     // alert('33')
+    //   })
+
+      //调整窗口大小事件 window.onresize = function()
+
+window.addEventListener('load', function(){
+var div = document.querySelector('div')
+      window.addEventListener('resize', function(){
+        console.log(window.innerWidth );
+        
+        console.log('change');
+        if(window.innerWidth <= 800){
+            div.style.display ='none'
+
+        }else{
+            div.style.display='block'
+        }
+        
+      })
+
+})
+
+//利用resize做响应式布局；
+
+
+
+
+
+
+
+
+       
+    </script>
+</body>
+</html>

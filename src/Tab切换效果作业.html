@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    
+
+
+      .tab_list li {
+            float: left;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px;
+            text-align: center;
+            cursor: pointer;
+            /* border: 1px solid grey; */
+            list-style: none;
+             border: 1px solid black;
+           
+        }
+
+        .tab_list .current {
+            background-color: red;
+            color: black;
+            
+        }
+        .content{
+            display: inline-block;
+            /* height: 200px; */
+            /* border: 1px solid black; */
+
+        }
+
+        .item{
+            display: none;
+        }
+
+
+
+</style>
+
+
+
+<body>
+    <div class="all">
+        <div class="tab_list">
+            <ul>
+                <li class="current">国际新闻</li>
+                <li>国内新闻</li>
+                <li>体育新闻</li>
+                <li>娱乐新闻</li>
+            </ul>
+
+        </div>
+        <div class="tab_content">
+            <div class="content">
+                <ul class="item">
+                    <ol>1.习近平100个金句，读懂这五年 治国理政 砥砺奋进</ol>
+                    <ol>2.深刻理解‘新的发展阶段’重大判断</ol>
+                    <ol>3.中国慰安妇生下的日本后人：这坏名声我背的好苦</ol>
+                </ul>
+            </div>
+             <div class="content">
+                <ul class="item">
+                    <ol>1.习近平100个金句，读懂这五年 治国理政 砥砺奋进</ol>
+                    <ol>2.深刻理解‘新的发展阶段’重大判断</ol>
+                    <ol>3.中国慰安妇生下的日本后人：这坏名声我背的好苦</ol>
+                </ul>
+            </div>
+             <div class="content">
+                <ul class="item">
+                    <ol>1.习近平100个金句，读懂这五年 治国理政 砥砺奋进</ol>
+                    <ol>2.深刻理解‘新的发展阶段’重大判断</ol>
+                    <ol>3.中国慰安妇生下的日本后人：这坏名声我背的好苦</ol>
+                </ul>
+            </div>
+             <div class="content">
+                <ul class="item">
+                    <ol>1.习近平100个金句，读懂这五年 治国理政 砥砺奋进</ol>
+                    <ol>2.深刻理解‘新的发展阶段’重大判断</ol>
+                    <ol>3.中国慰安妇生下的日本后人：这坏名声我背的好苦</ol>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+var tab_list = document.querySelector('.tab_list');
+var lis = tab_list.querySelectorAll('li')
+
+
+var tab_con = document.querySelector('.tab_content');
+var item = tab_con.querySelectorAll('.item');
+console.log(item);
+
+
+for(var i=0;i<lis.length;i++){
+    lis[i].setAttribute('index', i);
+    
+    lis[i].onclick = function(){
+            for(var i=0; i< lis.length;i++){
+                lis[i].className='';
+            }
+            this.className = 'current'; 
+
+            var index = this.getAttribute('index')
+            for(var i=0;i<item.length;i++){
+                item[i].style.display= 'none'
+            }
+
+            item[index].style.display ='block'
+
+
+
+        } 
+    
+
+
+}
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
