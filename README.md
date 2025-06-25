@@ -1,5 +1,5 @@
 -👋 Hi, I’m @Meiling-workshop
--👀 I’m interested in coding, learning languages ,working out as well as Zumba dance,
+-👀 I’m interested in coding, learning languages 
 -🌱 I’m currently mastering Html,CSS,JS,React,Node.js, Database 
 -📫 How to reach me: email
 -😄 Pronouns: She/her
