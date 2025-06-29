@@ -11,6 +11,7 @@
             background-color: pink;
             float: right ;
             top: 300px;
+            position: absolute;
            
         }
         .Header {
@@ -78,7 +79,7 @@ span{
 
             }else{
                 slideBar.style.position = 'absolute'
-                slideBar.style.top = 300 +'px';
+                slideBar.style.top = '300px';
             }
 
             //当页面滚动到main 显示goback
@@ -102,8 +103,39 @@ span{
         //client 经常用于获得元素大小 clientWidth clientHeight
         //scroll 经常用于获得滚动距离 scrollTop crollLeft
         //注意页面滚动的距离通过window.pageXoffset获得的
+        // 带有动画的返回顶部
+     goBack.addEventListener('click', function(){
+        animation(window,0) //
+     })
 
-var a=1;
+     function animation(obj, target,callBack) {
+            // console.log(callBack);
+            
+
+
+
+            clearInterval(obj.timer) //清除以前的定时器
+            obj.timer = setInterval(function () {
+                var step = (target - obj.window.pageYOffset)/10 //步长值修改为整数,向上取整
+             step =   step >0 ? Math.ceil(step) : Math.floor(step)
+
+
+                if (obj.window.pageYOffset == target) {
+                    clearInterval(obj.timer);
+                    //回调函数写在定时器结束里面
+                    if(callBack){
+                        callBack&&callBack();
+
+                    }
+                }
+               
+                window.scroll(0, window.pageYOffset + step)
+            
+            }, 15)
+
+        }
+
+
 
     </script>
 </body>

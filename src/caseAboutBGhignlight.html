@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="animate.js"></script>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+}
+
+.c_nav {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.c_nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+.c_nav li {
+  margin: 0 20px;
+  position: relative;
+}
+
+.c_nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding: 8px 10px;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.c_nav a:hover {
+  color: #007bff;
+}
+
+/* 云朵滑动条样式 */
+.cloud {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 80px;
+  height: 5px;
+  background-color: #007bff;
+  border-radius: 4px;
+  transition: left 0.3s ease;
+  pointer-events: none;
+}
+</style>
+
+    <script>
+        window.addEventListener('load', function(){
+            //1.获取元素
+            var cloud = document.querySelector('.cloud')
+            var c_nav = document.querySelector('.c_nav')
+            var lis = c_nav.querySelectorAll('li')
+            //云的起始位置
+            var current = 0;
+            //li 绑定事件
+            for( var i=0 ; i<lis.length; i++){
+                lis[i].addEventListener('mouseenter', function(){
+                    animation(cloud,this.offsetLeft)
+                })
+                //鼠标离开就回复为0 
+                 lis[i].addEventListener('mouseleave', function(){
+                    animation(cloud,current)
+                })
+                //当鼠标点击就成为目标值
+                lis[i].addEventListener('click', function(){
+                   current = this.offsetLeft
+                })
+            }
+        })
+    </script>
+</head>
+<body>
+    <div id="c_nav" class="c_nav">
+        <span class="cloud"></span>
+        <ul>
+            <li class="current"><a href="#">首页新闻</a></li>
+            <li><a href="#">师资力量</a></li>
+            <li><a href="#">活动策划</a></li>
+            <li><a href="#">企业文化</a></li>
+            <li><a href="#">招聘活动</a></li>
+            <li><a href="#">公司简介</a></li>
+            <li><a href="#">我是佩奇</a></li>
+            <li><a href="#">啥是佩奇</a></li>
+        </ul>
+
+
+
+    </div>
+
+</body>
+</html>
