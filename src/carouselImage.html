@@ -184,9 +184,16 @@
         }
         var first = ul.children[0].cloneNode(true);//clone Nodes 没有增加圆点
         ul.appendChild(first);
+        var flag = true;//节流阀
+
         var num = 0; //控制播放下一张
         var circle = 0;
         arrow_r.addEventListener('click', function () {
+            if(flag){
+                flag == false;//关闭节流阀
+            }
+
+
             //如果走到最后，此时ul要快速复原
             if (num == ul.children.length) {
                 ul.style.left = 0;
@@ -194,7 +201,9 @@
             }
 
             num++;
-            animation(ul, -num * focusWidth)
+            animation(ul, -num * focusWidth, function(){
+                flag = true;
+            })
             circle++;
             if (circle == ol.children.length) {
                 circle = 0
@@ -285,7 +294,7 @@
     </script>
 
 
-Not support in the browser
+<!-- Not support in the browser -->
 </body>
 
 </html>

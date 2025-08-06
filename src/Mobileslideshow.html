@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+    <style>
+        .focus{
+            position: relative;
+            padding-top: 44px;
+            /* overflow: hidden; */
+            
+        }
+        .focus img {
+            width: 100%;
+  
+        
+        }
+        .focus ol{
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            margin: 0;
+
+        }
+         .focus ol li{
+           display: inline-block;
+           width: 5px;
+           height: 5px;
+           background-color: red;
+           list-style: none;
+           border-radius: 2px;
+
+        }
+        .focus ul{
+            width: 500%;
+            /* overflow: hidden; */
+            margin-left: -100%;
+            
+        }
+
+        .focus ul li{
+            float: left;
+            width: 20%;
+        }
+
+     
+        .focus ol li.current{
+            width: 15px;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="search-index">
+        <div class="search"> 搜索：目的地、酒店、景点、航班号</div>
+        <a href="#" class="user">我 的</a>
+    </div>
+    <div class ='focus'>
+    <ul>
+        <li><img src="img/focus/3.jpeg" alt=""></li>
+        <li><img src="img/focus/1.jpeg" alt=""></li>
+        <li><img src="img/focus/2.jpeg" alt=""></li>
+        <li><img src="img/focus/3.jpeg" alt=""></li>
+        <li><img src="img/focus/4.jpeg" alt=""></li>
+    </ul>
+    <ol>
+        <li class="current"></li>
+        <li></li>
+        <li></li>
+    </ol>
+    </div>
+
+    
+</body>
+</html>
