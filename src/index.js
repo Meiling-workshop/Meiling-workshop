@@ -128,4 +128,35 @@ window.addEventListener('load', function(){
 //手指滑动轮播图 手指拖动ul; 
 //手指滑动轮播图：本质就ul跟随手指移动，触摸元素touchstart 获取手指初始坐标，touchmove计算手指的滑动距离，并移动盒子
 
+//返回顶部模块制作
+var goback = document.querySelector('.goBack');
+var nav = document.querySelector('nav')
+window.addEventListener('scroll' , function(){
+    if (this.window.pageXOffset >= nav.offsetTop){
+        goback.style.display = 'block';
+    }else{
+        goback.style.display = 'none'
+    }
+    goback.addEventListener('click', function(){
+    window.scroll(0,0)
+})
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
