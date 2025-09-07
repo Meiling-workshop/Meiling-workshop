@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj= {
+              id:1,
+            pname:1999,
+            num:1000,
+            price:5000,
+
+        }
+        // var arr = Object.keys(obj);
+        // console.log(arr);
+        // arr.forEach(function(value){
+        //     // console.log(value);
+            
+        // })
+        // obj.num = 2000;
+        // obj.color = 'red';
+        // console.log(obj);
+
+        Object.defineProperty(obj,'num',{
+            value:9999
+        })
+        console.log(obj);
+        
+        
+
+        
+
+          
+        
+        
+    </script>
+</body>
+</html>
