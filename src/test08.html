@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1.0, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <script>    
+
+    //call 改变函数的内在指向
+        function Father(uname,age,sex){
+            this.uname = uname;
+            this.age = age;
+            this.sex = sex;
+        }
+        function Son (uname, age , sex){
+            Father.call(this,uname,age,sex)
+
+        }
+        var son = new Son('刘德虎','18', 'male');
+        console.log(son);
+
+
+        var o = {
+            name:'lili'
+        }
+        function fn(arr){
+            console.log(this);
+            console.log(arr);
+            
+            
+        }
+        fn.apply(o,['red'])//必须传递数组形式
+        var arr = [1,0,50,88,99]
+       var max =  Math.max.apply(Math, arr)
+       var min =  Math.min.apply(Math, arr)
+       console.log(max);
+       console.log(min);
+
+       function fn(a,b){
+        console.log(a + b );
+        
+
+       }
+       var f = fn.bind(o,1,2)
+
+       f();
+       var btns = document.querySelectorAll('button');
+       for(var i=0; i < btns.length; i++){
+          btns[i].onlick = function(){
+            this.disabled = true;
+            setTimeout(function(){
+                this.disabled = false;
+
+            }.bind(this),2000)
+               
+        }
+
+
+
+       }
+      
+       
+
+
+      
+       
+
+        
+    </script>
+    
+</body>
+</html>

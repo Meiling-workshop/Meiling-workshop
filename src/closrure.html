@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <ul class="nav">
+        <li>durine</li>
+        <li>smelly tofu</li>
+        <li>fish can</li>
+        <li>pig feet</li>
+
+    </ul> -->
+    <script>
+        // var lis = document.querySelector('.nav').querySelectorAll('li')
+        // for(var i = 0;i < lis.length; i++){
+        //     lis[i].index = i;
+        //     lis[i].onclick = function(){
+        //         console.log(i);
+                
+        //     }
+        // }
+
+        //利用闭包的方式获得当前小li
+
+        // for( var i = 0; i <lis.length; i++){
+        //     //立即执行函数
+        //     (function(i){
+        //         lis[i].onlick = function(){
+        //             console.log(i);
+                    
+        //         }
+                
+
+        //     })(i);
+        // } 
+
+        // for( var i =0; i < lis.length ; i++){
+        //     (function(i){
+        //         setTimeout(function(){
+        //             console.log(lis[i].innerHTML);
+                    
+
+        //         },3000)
+
+        //     })(i)
+        // }
+
+        //打车案例 起步价13元 3公里,每增加1公里增加5元，如果拥堵多收10元
+
+      var car =  (function(){
+            var start = 13;
+            var total = 0;
+            return{
+                price: function(n){
+                    if( n <= 3){
+                        total = 13
+                    }else{
+                       total =  (n-3)*5 +start
+                    }
+                    return total;
+
+
+
+                },
+                yd: function(flag){
+                   return flag? total+10 : total
+
+
+                }
+            }
+
+        })()
+        car.price();
+        console.log(car.price(3));
+        console.log(car.yd(true));
+        
+
+
+
+
+
+    </script>
+</body>
+</html>
