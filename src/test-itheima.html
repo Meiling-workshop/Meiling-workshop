@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="itheima.js"></script>
+</head>
+<body>
+    <script>
+        itheima({
+            method:'GET',
+            url:'http://wwww.baidu.com',
+            data:{
+                id:1
+            },
+            success:function(res){
+                console.log(res);
+                
+            }
+
+        })
+
+        itheima({
+            method:'POST',
+            url:'http://wwww.baidu.com',
+            data:{
+                bookname:'shinaian',
+                author:'shuihuzhuan',
+                publisher:'shanghai'
+            }
+        })
+    </script>
+    
+</body>
+</html>

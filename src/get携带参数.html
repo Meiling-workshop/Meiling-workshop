@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <script>
+        // $.get('http://www.baidu.com', {id:1, bookname:'西游记'}, function(res){
+        //     console.log(res);
+            
+        // })
+        // $.ajax({
+        //     method:'get',
+        //     url:'http://www.baidu.com',
+        //     data:{name: 'zs' ,age: '20'},
+        //     success:function(res){
+        //         console.log(res);
+            
+        //     }
+        // })
+
+        //URL编码的原则
+      var code =  encodeURI('北京')
+        console.log(code);
+
+       var decode =  decodeURI(code)
+       console.log(decode);
+
+       //使用xhr 发起post请求
+
+       //create xhr object
+
+       var xhr = new XMLHttpRequest()
+        xhr.open('POST','http://www.baidu.com')
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+        xhr.send('bookname = baidu&author=baodu&publisher=shanghai')
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4 && xhr.status ===200){
+                console.log(xhr.responseText);
+                
+            }
+        }
+       
+        
+
+
+
+
+
+       
+    </script>
+</body>
+</html>

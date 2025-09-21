@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Axios 请求示例</title>
+  <!-- 通过 CDN 引入 Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <button id="btnPOST" onclick="abc()">发起post 请求</button>
+
+
+<!-- 第四章
+第五章
+
+
+1.什么是node
+2.什么是npm，yarn，pnpm
+3.什么包，包管理器是什么
+4.express是什么
+5.mysql数据库
+6.身份认证
+7.nodeapi练习项目，能理解多少算多少 -->
+
+
+    <script>
+        // const sum = (...args) =>{
+        //     let  total = 0;
+        //     args.forEach(item => total += item);
+        //     return total;
+        // }
+        // console.log(sum(10,20));
+        // console.log(sum(10,20,30));
+
+        // let arry = [ 'a','b','c']
+        // console.log(...arry);
+
+        function abc() {
+            axios.get('https://jsonplaceholder.typicode.com/posts/1')
+            .then(response => {
+            console.log(response.data);
+            })
+            .catch(error => {
+            console.log("error=", error);
+            });
+        }
+        
+        
+
+
+
+
+        
+        
+
+    </script>
+</body>
+</html>

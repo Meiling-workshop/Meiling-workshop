@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //json字符串转换为JS对象，使用JSON.parse()
+        var obj = JSON.parse('{"a":"hello", "b":"World"}')
+        console.log(obj);
+      var json =  JSON.stringify({a: 'hello', b:'World'})
+      console.log(typeof(json));
+
+      //创建一个XHR的对象
+      var xhr = new XMLHttpRequest()
+      //调用open函数
+      xhr.open('get', 'http://www.baidu.com')
+      //send 函数
+      xhr.send()
+      //监听onreadystatechange函数
+      xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            //获取响应数据
+            console.log(xhr.responseText);
+            
+        }
+      }    
+
+      
+        
+
+    </script>
+</body>
+</html>
